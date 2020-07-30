@@ -1,8 +1,11 @@
 module.exports = {
+
     devServer: {
-        // proxy: "http://127.0.0.1:3000",
-        // port: 8080, //本地端口
+        // proxy: "http://test.nbyunlong.cn/api",
+        proxy: "https://travel.backend.huangmaorui.cn",
+        port: 8081, //本地端口
         hot: true,
         open: true, //输入npm run server自动打开网页
     }
+
 }

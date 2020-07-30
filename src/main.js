@@ -6,6 +6,10 @@ import './assets/css/gloable.css'
 import './assets/fonts/iconfont.css'
 
 Vue.config.productionTip = false
+import axios from 'axios'
+//配置请求根路径
+// axios.defaults.baseURL = 'http://test.nbyunlong.cn/api'
+Vue.prototype.$axios = axios;
 
 new Vue({
   router,
