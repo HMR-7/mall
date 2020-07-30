@@ -88,6 +88,7 @@ export default {
             t.$message.success("登录成功");
             //登录成功后，保存token，保存到客户端的sessionStorage中(网站关闭之后就会清楚)
             // window.sessionStorage.setItem("token", res.data.token);
+            window.sessionStorage.setItem("token", 101216);
             //通过编程式导航跳转到后台首页，路由地址是/home
             setTimeout(() => {
               this.$router.push("/home");

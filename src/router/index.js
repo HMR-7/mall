@@ -18,5 +18,22 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-
+//挂载路由导航守卫
+router.beforeEach((to, from, next) => {
+  //to 将要访问的路径
+  //from 代表从哪个路径跳转过来
+  //next 是一个函数，表示是否通过放行
+  //next()通过放行，next('/login') 强制跳转
+  if (to.path === '/login') {
+    return next()
+  } else {
+    const token = window.sessionStorage.getItem('token')
+    if (!token) {
+      return next('/login')
+    } else {
+      return next()
+    }
+  }
+})
+//暴露router
 export default router
