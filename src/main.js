@@ -3,6 +3,7 @@ import App from './App.vue'
 import './plugins/element.js'
 import router from './router'
 import './assets/css/gloable.css'
+import './assets/fonts/iconfont.css'
 
 Vue.config.productionTip = false
 

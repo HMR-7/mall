@@ -5,18 +5,19 @@
         <img src="../assets/logo.png" alt />
       </div>
       <!-- 登录表单区域 -->
-      <el-form label-width="0px" style="width:100%">
+      <el-form label-width="0px" class="login_form">
         <!-- 用户名 -->
         <el-form-item>
-          <el-input></el-input>
+          <el-input prefix-icon="iconfont icon-yonghu"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item>
-          <el-input></el-input>
+          <el-input prefix-icon="iconfont icon-mima"></el-input>
         </el-form-item>
         <!-- 按钮 -->
-        <el-form-item>
-          <el-button type="primary">主要按钮</el-button>
+        <el-form-item class="btns">
+          <el-button type="primary">登录</el-button>
+          <el-button type="info">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -62,6 +63,17 @@ export default {
         height: 100%;
         border-radius: 50%;
         background-color: #eee;
+      }
+    }
+    .login_form {
+      position: absolute;
+      bottom: 0;
+      padding: 0 30px;
+      width: 100%;
+      box-sizing: border-box;
+      .btns {
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }

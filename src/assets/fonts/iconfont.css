@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+    src: url('//at.alicdn.com/t/font_1976266_mrxci5utg.eot?t=1596083637494'); /* IE9 */
+    src: url('//at.alicdn.com/t/font_1976266_mrxci5utg.eot?t=1596083637494#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOMAAsAAAAAB4wAAAM+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCdIJSATYCJAMMCwgABCAFhG0HNxuZBsgekqSrCRRQC4AJgJimePgaa+/v7omCN7VIF48khkSDdJ0hEsUSpEInBbqHQrtBO0uah+FN4Cxf7+UNnLu1lnkCIzLzFoAKpMp25y5HkGPhK1ujqqu/yvz/XE5vFHg4v2U5rj396F6AcUABjb0o0QIJyBvGrryI9QSaJsmBexZPr1BVGN0C0YtWBVRTOqWmONSFasnYIp4BuXq6IewDT/73488wqEgqmdH3+OJahv0nw1sPFZGK+LkI4I9nAZtExjqgEGeltlOFMLYOaSqyYn12VRHSWEFSH5+nKqor/eMlosoobINlGE98dm0OwWdvggQyqILEJfAKVaN9317mmfmomehzW2ekWlZo6G7XeMbmeItxwW7Fcdl12k2sFjes1R6VnuTvxAJGsaLz4/Ma4imxGD/Da7FcGnidkNQU3BtA8+2Yj9B5os64fCaIuk5DcNwTw9xB87xlhIbhdowHNY9zMjaOsgd9j7AB/8G14xBej6kfJ9Cykj+/cJ9yDT2Ts9LKUblvDxgpfLNICnu2gj5bzJIs3wZGP1tq2OZG0PbNov3aCbiRx+P6QHmWy8C2LeR4cRDyhuLbYJ+27banmqeep6pHuaeFpp6m9dYWGnu8H3JG0D04Z2w7ufhmNqjMZAZfjGZfyl9mjAaR/8x0efTMvMwMoDEIAuhfUAAS8xPnnIUM/tBv/Dfwdgcy6v1T0RbwcZTwBz39cwHtHED9/O3B/+C3JBVVaOhzkXk2T7dnO4ksCU1V7i+UwrC7/oqx1oWEurEYkpoJyOrm0UJdh4qWDaiq24SmNZaTW0akKIjSwKpyAGHQNCRd75ANOkAL9RYqxr1D1WAgaDoJ1jlbFiOaxjSFREgyhmQYLbmOYhnDelD8TGpkCU4Kffo7caAHUVlBKZu8JYd4jAGpsTpMCxWMYNdGC7AZWZaLSewaJIXdqDD0loqKEWUv6oa6NtTtYkQIERkKkUHRJC6H4lYO1XOff0ZUEYvANYQK9zvCAnrtSJkCpRborcxpRbiWS1LFVENpQgoUgblsyAK0IhaLCyWVtzIQSagrqkfEs6RolotoK+vOr7CfbxU0GUvmSJGjqF4lOqoWFeOjbQEAAAA=') format('woff2'),
+    url('//at.alicdn.com/t/font_1976266_mrxci5utg.woff?t=1596083637494') format('woff'),
+    url('//at.alicdn.com/t/font_1976266_mrxci5utg.ttf?t=1596083637494') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('//at.alicdn.com/t/font_1976266_mrxci5utg.svg?t=1596083637494#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-yonghu:before {
+    content: "\e60e";
+  }
+  
+  .icon-mima:before {
+    content: "\e66c";
+  }
+  
