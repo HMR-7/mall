@@ -41,7 +41,15 @@
           <el-table-column prop="nickName" label="微信昵称"></el-table-column>
           <el-table-column prop="userPhone" label="手机号"></el-table-column>
           <el-table-column prop="isAdmin" label="管理员"></el-table-column>
-          <el-table-column label="操作"></el-table-column>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-button
+                size="mini"
+                type="danger"
+                @click="handleDelete(scope.$index, scope.row,userList)"
+              >删除</el-button>
+            </template>
+          </el-table-column>
         </el-table>
       </el-main>
     </el-container>
@@ -77,6 +85,34 @@ export default {
       console.log(res);
       console.log(t.userList);
     },
+    /* 删除按钮 */
+    async handleDelete(index, row, Arr) {
+      console.log(index, row);
+      let t = this;
+      let isAdmin = -1;
+      if (row.isAdmin === "管理员") {
+        isAdmin = 1;
+      } else {
+        isAdmin = 0;
+      }
+      let params = {
+        isAdmin: isAdmin,
+        userId: row.id,
+      };
+      let res = await t.$axios.post("toDelUserMegs", params);
+      console.log(res);
+      if (res.data.msg == "删除成功!!") {
+        Arr.map((v, i, arr) => {
+          if (v.id == row.id) {
+            arr.splice(i, 1);
+            return arr;
+          }
+        });
+      } else {
+        t.$message.warning(res.data.msg);
+      }
+    },
+    /* 网站退出按钮 */
     logout() {
       window.sessionStorage.clear();
       this.$router.push("./login");
