@@ -12,35 +12,44 @@
     <el-container>
       <!-- 侧边栏 -->
       <el-aside width="200px">
+        <!-- 用户管理 -->
         <el-menu background-color="#393d49" text-color="#fff" active-text-color="#ffd04b">
           <!-- 一级菜单 -->
-          <el-submenu index="1">
-            <!-- 一级菜单模板区域 -->
-            <template slot="title">
-              <!-- 图标 -->
-              <i class="el-icon-location"></i>
-              <!-- 文本 -->
-              <span>用户管理</span>
-            </template>
-            <!-- 二级菜单模板区域 -->
-            <el-menu-item index="1-1">
-              <i class="el-icon-location"></i>
-              <span>管理员</span>
-            </el-menu-item>
-            <el-menu-item index="1-2">
-              <i class="el-icon-location"></i>
-              <span>普通成员</span>
-            </el-menu-item>
-          </el-submenu>
+          <el-menu-item index="1" @click="current=1">
+            <i class="el-icon-reading"></i>
+            <span slot="title">用户管理</span>
+          </el-menu-item>
+          <!-- 日志管理 -->
+          <el-menu-item index="2" @click="toArticle(allList)">
+            <i class="el-icon-reading"></i>
+            <span slot="title">日志管理</span>
+          </el-menu-item>
+          <!-- 景点管理 -->
+          <el-menu-item index="3">
+            <i class="el-icon-guide"></i>
+            <span slot="title">景点管理</span>
+          </el-menu-item>
+          <!-- 酒店管理 -->
+          <el-menu-item index="4">
+            <i class="el-icon-office-building"></i>
+            <span slot="title">酒店管理</span>
+          </el-menu-item>
+          <!-- 美食管理 -->
+          <el-menu-item index="5">
+            <i class="el-icon-eleme"></i>
+            <span slot="title">美食管理</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
       <!-- 右侧主体 -->
       <el-main>
-        <el-table :data="userList" style="width: 100%">
+        <!-- 用户管理 -->
+        <el-table v-if="current==1" :data="userList" style="width: 100%">
           <el-table-column prop="id" label="用户id"></el-table-column>
           <el-table-column prop="nickName" label="微信昵称"></el-table-column>
           <el-table-column prop="userPhone" label="手机号"></el-table-column>
           <el-table-column prop="isAdmin" label="管理员"></el-table-column>
+          <el-table-column prop="openid" label="openid"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-button
@@ -60,6 +69,8 @@
 export default {
   data() {
     return {
+      current: 1,
+      allList: null,
       userList: [],
     };
   },
@@ -69,6 +80,7 @@ export default {
   methods: {
     async isAdmin() {
       let t = this;
+      t.current = 1;
       let params = {
         isAdmin: 1,
       };
@@ -81,7 +93,7 @@ export default {
         }
       });
       t.userList = res.data[0];
-
+      t.allList = res.data;
       console.log(res);
       console.log(t.userList);
     },
@@ -108,6 +120,7 @@ export default {
             return arr;
           }
         });
+        t.$message.success(res.data.msg);
       } else {
         t.$message.warning(res.data.msg);
       }
