@@ -60,6 +60,27 @@
             </template>
           </el-table-column>
         </el-table>
+        <!-- 日志管理
+        <el-table v-if="current===2" :data="articleList" style="width: 100%">
+          <el-table-column prop="id" label="用户id"></el-table-column>
+          <el-table-column prop="user_name" label="微信昵称"></el-table-column>
+          <el-table-column label="微信头像">
+            <template slot-scope="scope">
+              <el-image style="width: 50px; height: 50px" :src="scope.row.user_head"></el-image>
+            </template>
+          </el-table-column>
+          <el-table-column prop="time" label="发布时间"></el-table-column>
+          <el-table-column prop="article" label="日志内容"></el-table-column>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-button
+                size="mini"
+                type="danger"
+                @click="toDelLogMegs(scope.$index, scope.row,articleList)"
+              >删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table> -->
       </el-main>
     </el-container>
   </el-container>
@@ -130,6 +151,58 @@ export default {
       window.sessionStorage.clear();
       this.$router.push("./login");
     },
+     /* 日志删除 */
+   /*  async toDelLogMegs(index, row, Arr) {
+      let t = this;
+      let params = {
+        logId: row.id,
+      };
+      const res = await t.$axios.post("toDelLogMegs", params);
+      console.log(res);
+      if (res.data.msg == "删除成功!!") {
+        Arr.map((v, i, arr) => {
+          if (v.id == row.id) {
+            arr.splice(i, 1);
+            return arr;
+          }
+        });
+        t.$message.success(res.data.msg);
+      } else {
+        t.$message.warning(res.data.msg);
+      }
+    },
+    toArticle(allList) {
+      this.current = 2;
+      this.articleList = allList[1];
+      console.log(this.articleList);
+      this.articleList.map((v, i, Arr) => {
+        let d = new Date(v.time);
+        let time = this.formatDate(d);
+        v.time = time;
+        return Arr;
+      });
+    },
+    formatDate(now) {
+      var year = now.getFullYear(); //取得4位数的年份
+      var month = now.getMonth() + 1; //取得日期中的月份，其中0表示1月，11表示12月
+      var date = now.getDate(); //返回日期月份中的天数（1到31）
+      var hour = now.getHours(); //返回日期中的小时数（0到23）
+      var minute = now.getMinutes(); //返回日期中的分钟数（0到59）
+      var second = now.getSeconds(); //返回日期中的秒数（0到59）
+      return (
+        year +
+        "-" +
+        month +
+        "-" +
+        date +
+        " " +
+        hour +
+        ":" +
+        minute +
+        ":" +
+        second
+      );
+    }, */
   },
 };
 </script>
