@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { isHmr } from "../components/ex";
+
 export default {
   data() {
     return {
@@ -60,6 +62,9 @@ export default {
         ],
       },
     };
+  },
+  mounted() {
+    console.log(isHmr);
   },
   methods: {
     //点击重置按钮，重置登录表单
